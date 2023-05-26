@@ -1,0 +1,33 @@
+name: "lpr_system"
+mode: "dev"
+version: "v1.1.0"
+port: 8081
+start_time: "2023-04-08"
+machine_id: 1
+
+
+log:
+  level: "debug"
+  filename: "lprs.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: "43.143.180.52"
+  port: 3306
+  user: "root"
+  password: "lprs@Wust2023"
+  dbname: "lprs"
+  max_open_conns: 200
+  max_idle_conns: 50
+
+#mysql:
+#  host: "127.0.0.1"
+#  port: 3306
+#  user: "root"
+#  password: "lovewk1314"
+#  dbname: "lprs"
+#  max_open_conns: 200
+#  max_idle_conns: 50
+
