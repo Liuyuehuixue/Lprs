@@ -1,0 +1,28 @@
+<!--pages/homes/homes.wxml-->
+
+<view wx:if="{{readonly==flag1}}" >
+    <van-cell-group >
+  <van-field picker="" model:value="{{elevatorname}}" label="项目名称" border="{{ true }}" name="elevatorname" readonly />
+  <van-field picker="" model:value="{{liftNum}}" label="电梯编号" border="{{ true }}" name="liftNum" readonly />
+  <van-field picker="" model:value="{{liftBrand}}" label="电梯品牌" border="{{ true }}" name="liftBrand" readonly />
+  <van-field picker="" model:value="{{manager}}" label="负责人" border="{{ true }}" name="manager" readonly />
+  <van-field picker="" model:value="{{time}}" label="用时" border="{{ true }}" name="time" readonly />
+  <van-field picker="" model:value="{{maintenanceStartTime}}" label="当前时间" border="{{ true }}" name="time" readonly/>
+  <van-field picker="" model:value="{{typeName}}" label="保养类型" border="{{ true }}" name="typeName" readonly/>
+</van-cell-group>
+</view>
+
+
+  <view wx:else>
+<van-cell-group>
+  <van-field picker="" model:value="{{elevatorname}}" label="项目名称" border="{{ true }}" name="elevatorname"  />
+  <van-field picker="" model:value="{{liftNum}}" label="电梯编号" border="{{ true }}" name="liftNum"  />
+  <van-field picker="" model:value="{{liftBrand}}" label="电梯品牌" border="{{ true }}" name="liftBrand"  />
+  <van-field picker="" model:value="{{manager}}" label="负责人" border="{{ true }}" name="manager"  />
+  <van-field picker="" model:value="{{time}}" label="用时" border="{{ true }}" name="time"  />
+  <van-field picker="" model:value="{{maintenanceStartTime}}" label="当前时间" border="{{ true }}" name="time" />
+  <van-field picker="" model:value="{{typeName}}" label="保养类型" border="{{ true }}" name="time" />
+</van-cell-group>
+  </view>
+
+<button bindtap="nextLevelpage">下一步</button>

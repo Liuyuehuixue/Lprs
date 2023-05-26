@@ -1,0 +1,160 @@
+<!--pages/third1/third1.wxml-->
+
+<!-- 单选框 -->
+
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange" v-model="activeNames">
+  <van-collapse-item title="有无该功能" name="1">
+    <van-radio-group value="{{ radio1 }}" bind:change="onChange1" direction="horizontal">
+      <van-radio name="1">有</van-radio>
+      <van-radio name="2">无</van-radio>
+    </van-radio-group>
+  </van-collapse-item>
+
+  <van-collapse-item title="工作正常" name="2" wx:if="{{radio1 == '1'}}">
+    <van-radio-group value="{{ radio2 }}" bind:change="onChange2" direction="horizontal">
+      <van-radio name="1">是</van-radio>
+      <van-radio name="2">否</van-radio>
+    </van-radio-group>
+  </van-collapse-item>
+</van-collapse>
+
+<!-- 分割线 -->
+<van-divider />
+
+
+<!-- 文本框 -->
+<van-field
+    value="{{ datakey }}"
+    label="数据值"
+    placeholder="请输入数据值（选填）"
+    clearable
+    bindblur='dataInput'
+  />
+
+  <van-field
+    value="{{ partmodel }}"
+    label="部件型号"
+    placeholder="请输入部件型号"
+    required
+    clearable
+    bindblur='partInput'
+  />
+
+  <van-field
+    value="{{ memo }}"
+    label="备注"
+    placeholder="请填写备注"
+    required
+    clearable
+    bindblur='memoInput'
+  />
+  
+
+
+  <van-van-field>
+      <view class="Start">下次检查时间
+        <image class="dateST" style="width:25px;height: 25px;" src="/images/date.png" />
+      </view>
+    </van-van-field>
+    
+    <van-van-field>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <input value='{{startTime}}' style="font-size: 14px;margin-left: 37rpx;margin-top: 10rpx;" placeholder='请选择时间填写' disabled="true" />
+      </picker>
+    </van-van-field>
+  
+
+ <!-- 图片组件 -->
+ <view class="imgBox" wx:if="{{radio2 == '2' || radio1 == '2'}}">
+    <view class="imgBox_1"><text>问题图片</text></view>
+    <view class="topButtonPre">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="previewImage4" >预览</button>
+    </view>
+
+    <view class="topButton">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="goToProblem" >注册图像</button>
+    </view>
+  
+    <view class="imgpreview">
+      <image src="{{previewImagePrPath}}" class="upload_img" style="width:167rpx;height: 167rpx;"></image>
+    </view>
+    <view class="imgCamera">
+      <image src="{{cameraImagePath}}" class="button_img" style="width:167rpx;height: 167rpx;margin-left: 50"></image>
+    </view>
+</view>
+
+<view class="imgBox" wx:if="{{radio2 == '1' && radio1 == '1'}}">
+    <view wx:if="{{radio1=='2'}}"><text decode="{{true}}">&nbsp;标准图片</text></view>
+    <view class="imgBox_2" wx:if="{{radio1=='1'}}"><text>标准图片</text></view>
+    <view class="topButtonPre">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="previewImage5" >预览</button>
+    </view>
+
+    <view class="topButton">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="goToStandard" >注册图像</button>
+    </view>
+  
+    <view class="imgpreview">
+      <image src="{{previewImageStPath}}" class="upload_img" style="width:167rpx;height: 167rpx;"></image>
+    </view>
+    <view class="imgCamera">
+      <image src="{{cameraImagePath}}" class="button_img" style="width:167rpx;height: 167rpx;margin-left: 50"></image>
+    </view>
+</view>
+
+
+<view class="position">
+  <text>
+    AI检测
+  </text>
+  </view>
+
+<view class="imgBox1">
+    <view><text>注册图片</text></view>
+
+    <view class="topButtonPre">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="previewImage1" >预览</button>
+    </view>
+
+    <view class="topButton">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="goToRegister" >注册图像</button>
+    </view>
+  
+    <view class="imgpreview">
+      <image src="{{previewImageRePath}}" class="upload_img" style="width:167rpx;height: 167rpx;"></image>
+    </view>
+    <view class="imgCamera">
+      <image src="{{cameraImagePath}}" class="button_img" style="width:167rpx;height: 167rpx;margin-left: 50"></image>
+    </view>
+</view>
+
+<view class="imgBox2">
+    <view><text>水印拍照</text></view>
+    <view class="topButtonPre2">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="previewImage2" >预览</button>
+    </view>
+
+    <view class="topButton2">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="goToWaterMark" >水印拍照</button>
+     </view>
+
+    <view class="imgpreview2">
+      <image src="{{previewImageWaPath}}" class="upload_img2" style="width:167rpx;height: 167rpx;opacity:100%"></image>
+    </view>
+    <view class="imgCamera2">
+      <image src="{{cameraImagePath}}" class="button_img2" style="width:167rpx;height: 167rpx;opacity:100%;"></image>
+    </view>
+</view>
+
+<view class="imgBox1">
+    <view><text>结果预览</text></view>
+    <view class="topButtonPre2">
+        <button style="width:167rpx;height: 167rpx; opacity:0%;"  type="primary" bindtap="previewImage3" >预览</button>
+    </view>
+    <view class="imgpreview3">
+      <image src="{{previewImageResult}}" class="upload_img3" style="width:167rpx;height: 167rpx;opacity:100%"></image>
+    </view>
+</view>
+
+<button bindtap="submit">保存保养部位</button>

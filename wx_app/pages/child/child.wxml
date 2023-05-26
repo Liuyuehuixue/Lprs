@@ -1,0 +1,23 @@
+<!-- 容器 -->
+<view>
+  <!-- 一般情况下的搜索框显示 -->
+  <view wx:if="{{!focus}}" class='search'>
+    <image class="search_image" src='search.png'></image>
+    <input type='text' placeholder='搜索人名' placeholder-class="center" confirm-type='search' bindfocus="focusHandler"></input>
+  </view>
+  <!-- 获得焦点时的搜索框，多一个取消按钮 -->
+  <view wx:if="{{focus}}" class='search'>
+    <input class="search_input" type='text' placeholder='搜索人名' confirm-type='search' value="{{searchValue}}" bindinput='query' focus="{{focus}}" style="width: 290px">
+    </input>
+    <image class="search_image" src='cancel.png' bindtap='cancelHandler'></image>
+  </view>
+  <block wx:for="{{NumberList}}" wx:for-index="index" wx:key="property">
+    <van-cell-group>
+      <van-cell bindtap="detail" data-index="{{ index }}" bindlongpress="delete" id="{{item.index}}" title="姓名：{{item.name}}" label="编号:{{item.code}},总次数:{{item.count_test}},评估员:{{item.manager_name}}" border="{{ false }}" is-link   
+      />
+    </van-cell-group>
+  </block>
+  <view>
+    <van-button round type="info" class="btn1" size="normal" form-type="submit"  bind:tap="btn1" style="width: 247rpx; height: 104rpx; display: flex; box-sizing: border-box; position: fixed; left: 254rpx; ; ">添加</van-button>
+  </view>
+</view>

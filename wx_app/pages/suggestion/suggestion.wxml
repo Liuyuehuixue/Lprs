@@ -1,0 +1,18 @@
+<!-- 容器 -->
+<!-- <scroll-view scroll-y="{{isScroll}}"> -->
+
+
+<view class="screen" hidden="{{addmodel}}">
+  <van-cell title="次数选择:" size="large" class="title" />
+  <!-- <view hidden="{{!hidechoose}}" > -->
+    <van-cell value="请选择" size="large" is-link class="choose" />
+  <!-- </view> -->
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item class="menu_item" model:value="{{timesvalue}}" options="{{ times }}" bind:change="menuChange" />
+  </van-dropdown-menu>
+</view>
+<block wx:for="{{showList}}" wx:for-index="index"  wx:key="index">
+  <van-cell-group>
+      <van-cell title="{{index+1}}. {{item}}" border="{{ false }}"/>
+  </van-cell-group>
+</block>

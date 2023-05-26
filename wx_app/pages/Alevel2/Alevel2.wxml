@@ -1,0 +1,65 @@
+<!-- 容器 -->
+<!-- <scroll-view scroll-y="{{isScroll}}"> -->
+
+<view class="screen">
+  <van-cell title="测试表选择:" size="large" class="title"/>
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item class="menu_item" model:value="{{optionvalue}}" options="{{ options }}" bind:change="tableChange" />
+  </van-dropdown-menu>
+</view>
+
+<view class="screen" hidden="{{addmodel}}" type="primary" style="border:none;">
+  <van-cell title="次数选择:" size="large" class="title" type="primary" style="border:none;"/>
+  <van-cell value="请选择" size="large" is-link class="choose" type="primary" style="border:none;"/>
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item class="menu_item" model:value="{{timesvalue}}" options="{{ times }}" bind:change="timeChange" />
+  </van-dropdown-menu>
+</view>
+
+<!-- <view class="screen" hidden="{{addmodel}}">
+  <van-cell title="次数选择:" size="large" class="title" style="width: 20"/>
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item get-container="body" class="menu_item" :value="{{timesvalue}}" options="{{ times }}" bind:change="timeChange" />
+  </van-dropdown-menu>
+</view> -->
+
+<block wx:for="{{showList}}" wx:for-index="index"  wx:key="index">
+  <van-cell-group>
+      <van-cell title="{{index+1}}. {{item.survey_project_cnname}}" border="{{ false }}"/>
+      <!-- <van-cell title="{{index+1}}. {{item.survey_project_cnname}}" label="类型: {{item.survey_sub_range}}" border="{{ false }}"/> -->
+      <van-radio-group disabled="{{!disabled}}" value="{{ item.score }}" bindchange = "radioChange" data-index="{{ index }}" direction="horizontal">
+        <van-radio name="P">P</van-radio>
+        <van-radio name="F">F</van-radio>
+        <van-radio name="E">E</van-radio>
+        <van-radio name="X">X</van-radio>
+      </van-radio-group>
+  </van-cell-group>
+</block>
+<view class="btns">
+  <button  class="savebtn" bindtap="save" hidden="{{!disabled}}">暂存</button>
+  <button  class="submitbtn" bindtap="submit" hidden="{{!disabled}}">提交</button>
+</view>
+
+
+
+<!-- <button class="show-btn" bindtap="showDialogBtn">弹窗</button> -->
+
+<!--弹窗-->
+<!-- <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">保养零件</view>
+  <view class="modal-content"> 
+  <scroll-view scroll-y="true" style="height:auto">
+<block wx:for="{{maintenancePart2}}" wx:key="property">
+  <van-cell-group>
+      <van-cell bindtap="bind1" id="{{item.index}}" title="{{item.index+1}}. {{item.maintenancePart}}" label="提交状态:{{item.isSubmit}}" border="{{ false }}" is-link link-type="navigateTo" wx:if="{{item.state==flag}}" />
+  </van-cell-group>
+</block>
+</scroll-view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+</scroll-view > -->

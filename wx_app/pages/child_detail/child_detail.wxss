@@ -1,0 +1,22 @@
+
+.screen{
+  display: flex;
+  width: 1000rpx;
+}
+.menu{
+  width:700rpx
+}
+.menu_item{
+  width:300rpx
+}
+.btn1 {
+  margin-top: 30rpx;
+  border-radius: 98rpx;
+  /* display: flex; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 30rpx;
+  float: none;
+  position: fixed;
+}

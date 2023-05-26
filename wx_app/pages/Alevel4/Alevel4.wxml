@@ -1,0 +1,45 @@
+<!--pages/third1/third1.wxml-->
+
+<!-- 单选框 -->
+<van-field value="{{ radio1 }}" label="有无该功能" placeholder="" readonly bindblur='dataInput' />
+<van-field value="{{ radio2 }}" label="工作正常" placeholder="" readonly bindblur='dataInput' />
+
+
+
+
+<!-- 分割线 -->
+<van-divider />
+
+
+<!-- 文本框 -->
+<van-field value="{{ datakey }}" label="数据值" placeholder="未填写" readonly bindblur='dataInput'/>
+
+<van-field value="{{ partModel }}" label="部件型号" placeholder="未填写" readonly clearable bindblur='partInput' />
+
+<van-field value="{{partremark}}" label="备注" placeholder="未填写" readonly clearable bindblur='memoInput' />
+
+
+
+<!-- 分割线 -->
+<van-divider />
+
+
+<!-- 弹出层选择时间 -->
+
+<van-cell class="class2" title="下次保养时间：" value="{{nextInspectionTime}}" />
+<!-- 分割线 -->
+<van-field value="{{standardImgUrl}}" label="标准图片:" readonly clearable bindblur='memoInput' wx:if="{{standardFlag}}"/>
+<block wx:for="{{standardList}}" wx:key="property" wx:if="{{standardFlag}}">
+  <van-image class="image_style" width="500rpx" height="500rpx" src="{{item}}" bindtap="previewImg" data-url="{{item}}"/>
+</block>
+
+<van-field value="{{troubleImgUrl}}" label="问题图片:" readonly clearable bindblur='memoInput' wx:if="{{troubleFlag}}"/>
+<block wx:for="{{troubleList}}" wx:key="property" wx:if="{{troubleFlag}}">
+  <van-image class="image_style" width="500rpx" height="500rpx" src="{{item}}" bindtap="previewImg" data-url="{{item}}"/>
+</block>
+
+<van-field value="{{resultImgUrl}}" label="ai拍照结果:" readonly clearable bindblur='memoInput' wx:if="{{resultFlag}}"/>
+<block wx:key="property" wx:if="{{resultFlag}}">
+  <van-image class="image_style" width="500rpx" height="500rpx" src="{{resultImgUrl}}" bindtap="previewImg" data-url="{{resultImgUrl}}"/>
+</block>
+<van-divider />

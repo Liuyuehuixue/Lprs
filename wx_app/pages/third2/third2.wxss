@@ -1,0 +1,90 @@
+/* pages/third1/third1.wxss */
+page {
+  background: #EFF4FF;
+}
+
+.Start{
+ margin-top: 1rpx;
+ margin-left: 37rpx;
+ font-size: 14px;
+ font-weight:500;
+ color: rgba(63, 62, 62, 0.877);
+}
+.imgBox {
+  font-size: 28rpx;
+  margin: 3%;
+  background: white;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.imgBox_1::before{
+  content: "*";
+  color: red;
+}
+.imgBox_2::before{
+  /* content: "*"; */
+  color: red;
+}
+
+.imgContant {
+  margin-left: 40rpx;
+}
+.imgBox1 {
+  font-size: 28rpx;
+  margin: 3%;
+  background: white;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.topButtonPre{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+}
+.topButton{
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.imgpreview{
+  margin-top:  10rpx;
+  margin-left: -350rpx;
+}
+.imgCamera{
+  margin-top:  10rpx;
+  margin-left: 20rpx;
+}
+
+.imgBox2 {
+  font-size: 28rpx;
+  margin: 3%;
+  background: white;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  margin-top:  0rpx;
+}
+.topButtonPre2{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+}
+.topButton2{
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.imgpreview2{
+  margin-top:  10rpx;
+  margin-left: -350rpx;
+}
+.imgCamera2 {
+  margin-top:  10rpx;
+  margin-left: 20rpx;
+}
+.imgpreview3{
+  margin-top:  10rpx;
+  margin-left: -170rpx;
+}

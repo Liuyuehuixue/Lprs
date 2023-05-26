@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "查看详细记录",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#efefef",
+  "backgroundTextStyle": "dark"
+}

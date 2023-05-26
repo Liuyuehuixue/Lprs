@@ -1,0 +1,32 @@
+var cut1 = function (val) {     //格式化获取后台时间戳的年月日
+
+  //console.log(val);
+  var str = val
+  str = str.replace(getRegExp('-', 'g'), '/')
+  var date = getDate(str)
+  //console.log(date);
+  // var times = val.replace("-", "/").replace(":", "/")
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+  var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+  // var year = date.getFullYear()
+  // var month = date.getMonth() + 1
+  // var day = date.getDate()
+
+  return year + '年' + month + '月' + day + '日'
+}
+
+var cut2 = function (val) {   //格式化获取后台时间戳的时分
+  var str = val
+  str = str.replace(getRegExp('-', 'g'), '/')
+  var date = getDate(str)
+
+  var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+  var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+
+  return hours + ":" + minutes
+}
+
+module.exports.cut1 = cut1;
+module.exports.cut2 = cut2;

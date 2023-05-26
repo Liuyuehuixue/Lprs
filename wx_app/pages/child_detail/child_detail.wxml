@@ -1,0 +1,16 @@
+<view class="screen">
+  <van-cell title="查看内容:" size="large" class="title" style="width: 20"/>
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item class="menu_item" value="{{optionvalue}}" options="{{ options }}" bind:change="menuChange" />
+  </van-dropdown-menu>
+</view>
+
+<view class="screen">
+  <van-cell title="次数选择:" size="large" class="title" style="width: 20"/>
+  <van-dropdown-menu class="menu">
+    <van-dropdown-item class="menu_item" value="{{timesvalue}}" options="{{ times }}" bind:change="timeChange" />
+  </van-dropdown-menu>
+</view>
+<view>
+  <van-button round type="info" class="btn1" size="normal" form-type="submit"  bind:tap="btn1"style="width: 247rpx; height: 104rpx; display: flex; box-sizing: border-box; position: fixed; left: 254rpx; ; ">查看</van-button>
+</view>

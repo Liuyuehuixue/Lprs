@@ -1,0 +1,9 @@
+<!-- 容器 -->
+<!-- <scroll-view scroll-y="{{isScroll}}"> -->
+
+
+<block wx:for="{{showList}}" wx:for-index="index"  wx:key="index">
+  <van-cell-group>
+      <van-cell title="{{index+1}}. {{item.survey_project_cnname}}" label="评估结果: {{item.score}}" border="{{ false }}"/>
+  </van-cell-group>
+</block>

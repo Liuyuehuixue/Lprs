@@ -1,0 +1,15 @@
+<!-- 容器 -->
+<view>
+  <!-- <view class="search">
+    <input class="search-img" type="text" value="{{searchValue}}" bindinput="input1"  placeholder="搜索项目名称"  bindconfirm="search" />
+    <image class="sea_img" src="../../img/search.png"></image>
+</view> -->
+
+  <block wx:for="{{maintenanceList}}" wx:key="property">
+    <van-cell-group>
+  <van-cell bindtap="bind1" id="{{item.index}}" title="部件名称：{{item.maintenancePart}}"  border="{{ false }}" is-link   link-type="navigateTo"
+   />
+</van-cell-group>
+  </block>
+
+</view>

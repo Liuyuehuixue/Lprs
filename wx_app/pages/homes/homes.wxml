@@ -1,0 +1,15 @@
+<!--pages/homes/homes.wxml-->
+<van-cell-group>
+  <van-field model:value="{{code}}" label="编号" border="{{ true }}" name="code" label-align="left" disabled="{{!addmodel}}" bind:blur="codeChange"/>
+  <van-field model:value="{{name}}" label="姓名" border="{{ true }}" name="name" disabled="{{!addmodel}}"/>
+  <van-field wx:if="{{addmodel}}" model:value="{{age}}" label="月龄" border="{{ true }}" name="age"/>
+  <van-field model:value="{{manager_name}}" label="评估员" border="{{ true }}" name="manager" disabled="{{!addmodel}}"/>
+  <van-field model:value="{{test_n}}" label="{{label_testn}}" border="{{ true }}" name="test_n" disabled="{{!addmodel}}"/>
+  <!-- <van-field wx:if="{{addmodel}}" model:value="{{test_n}}" label="次数" border="{{ true }}" name="test_n" placeholder="一共有{{times}}次"/> -->
+  
+</van-cell-group>
+<view style="position:fixed; width:100%; bottom: 0;">
+  <button hidden="{{addmodel}}" class="nextbutton" bindtap="suggestion">查看建议</button>
+  <button hidden="{{addmodel}}" class="nextbutton" bindtap="graph">查看评价报告</button>
+  <button class="nextbutton" bindtap="nextLevelpage">{{buttonvalue}}</button>
+</view>

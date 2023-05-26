@@ -1,0 +1,4 @@
+/* pages/Alevel4/Alevel4.wxss */
+.image_style{
+  margin-left: 200rpx;
+}

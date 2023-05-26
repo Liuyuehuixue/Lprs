@@ -1,0 +1,13 @@
+
+.nextbutton {
+  margin-top: 30rpx;
+  border-radius: 98rpx;
+  flex-direction:column;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;/*相对于可视区窗口，距离窗口左边50%个可视区窗口
+  margin-left:-300px ; */ 
+}

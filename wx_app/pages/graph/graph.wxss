@@ -1,0 +1,39 @@
+/* pages/test/test.wxss */
+.header_wrap {
+  height: 100px;
+}
+
+.table {
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  position: fixed;
+  background-color: rgb(194, 228, 243);
+}
+
+.cell {
+  width: 11.11%;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+.cell2 {
+  width: 11.11%;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #000;
+  background-color: rgb(230, 230, 230);
+}

@@ -1,0 +1,8 @@
+.picker{
+    
+  border: 1px solid #ccc;
+  border-color:rgb(196, 194, 194);
+  height: 50rpx;
+  width: 400rpx;
+  text-align: center;
+}

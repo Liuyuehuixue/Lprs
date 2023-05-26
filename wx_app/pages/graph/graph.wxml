@@ -1,0 +1,39 @@
+<!-- <view class="container">
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <button type="primary" bindtap="updateData">更新数据</button>
+</view> -->
+<view class="header_wrap">
+  <view class="header">
+    <text class="cell">发展年龄</text>
+    <text class="cell">感知觉</text>
+    <text class="cell">粗大动作</text>
+    <text class="cell">精细动作</text>
+    <text class="cell">语言沟通</text>
+    <text class="cell">认知</text>
+    <text class="cell">社交</text>
+    <text class="cell">自理</text>
+    <text class="cell">发展分数</text>
+  </view>
+</view>
+<view class="table">
+  <view class="row" wx:for="{{list}}" wx:key="index">
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.age}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.age}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.gzj}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.gzj}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.cddz}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.cddz}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.jxdz}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.jxdz}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.yyygt}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.yyygt}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.rzfz}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.rzfz}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.shjw}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.shjw}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.shzl}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.shzl}}"></rich-text>
+    <rich-text class="cell" wx:if="{{index%2 == 0}}" nodes="{{item.fzfs}}"></rich-text>
+    <rich-text class="cell2" wx:else nodes="{{item.fzfs}}"></rich-text>
+  </view>
+</view>
